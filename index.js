@@ -4,9 +4,9 @@ const monk = require('monk');
 
 const app = express();
 
-app.use(express.static('../client'));  //server client side on same server
+app.use(express.static('./'));  //server client side on same server
 
-const db = monk('localhost/meower');
+const db = monk(process.env.MONGO_URI || 'localhost/meower');
 
 const mews = db.get('mews');
 

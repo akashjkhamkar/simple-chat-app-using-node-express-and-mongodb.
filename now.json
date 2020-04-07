@@ -1,0 +1,7 @@
+{
+    "name": "meower-db",
+    "version": 1,
+    "env": {
+      "MONGODB_URI": "mongodb+srv://xatriya:<skylinesky5>@meower-db-sb8gj.mongodb.net/test?retryWrites=true&w=majority"
+    }
+  }
