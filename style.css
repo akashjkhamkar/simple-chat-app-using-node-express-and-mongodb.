@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+}
+.newform , .loading-div{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.loading{
+  display : block;
+  margin: auto;
+}
+.mews{
+  margin : auto;
+}
+.heading{
+  color: #33c3f0;
+}
+.content{
+  color: #555555;
+  font-size: 20px;
+}
+.date{
+  color: #8d8d8d;
+}
