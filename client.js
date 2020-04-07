@@ -1,7 +1,7 @@
 const form = document.querySelector('form');
 const loading = document.querySelector('.loading');
 const mews = document.querySelector('.mews');
-const API_URL = 'http://d5484fd8.ngrok.io/mews';
+const API_URL = 'https://chat-app-eight.now.sh/mews';
 
 setInterval(() => {
   loadmews();
