@@ -1,20 +1,44 @@
 .title {
+  color: green;
+  margin: auto;
+  font-family: 'Comic Neue', cursive;
   text-align: center;
+}
+.logo{
+  margin: auto;
+  display: block;
 }
 .newform , .loading-div{
   width: 50%;
   margin: 0 auto;
 }
-
+#name ,#mew{
+  font-size: 20px;;
+}
+#mew{
+  height: 200px;
+}
+#b{
+  background: green;
+  border-color: green;
+}
 .loading{
   display : block;
   margin: auto;
+}
+.container{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 7px;
+  margin: 10px;
+  padding:16px;
+  transition: 0.3s;
+  width: 100%;
 }
 .mews{
   margin : auto;
 }
 .heading{
-  color: #33c3f0;
+  color: green;
 }
 .content{
   color: #555555;

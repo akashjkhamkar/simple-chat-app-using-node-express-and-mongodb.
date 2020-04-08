@@ -5,18 +5,20 @@ const monk = require('monk');
 const app = express();
 
 app.use(express.static('../client-bak'));
-const db = monk(process.env.MONGO_URI || 'localhost/meower');
+const URI = "mongodb+srv://xatriya:qwertyakash@meower-db-sb8gj.mongodb.net/test?retryWrites=true&w=majority";
+// const db = monk('localhost/meower');
+const db = monk(URI || 'localhost/meower');
 
 const mews = db.get('mews');
 
 app.use(cors()); //to accept requests from static files
 app.use(express.json()); //to parse data received
 
-// app.get('/', (req, res) => {
-//     res.json({
-//         message: 'Meower brah brah!'
-//     });
-// });
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Meower brah brah!'
+    });
+});
 
 app.get('/mews', (req, res) => {
     mews.find().then(ar => res.json(ar));

@@ -1,11 +1,13 @@
 const form = document.querySelector('form');
 const loading = document.querySelector('.loading');
 const mews = document.querySelector('.mews');
-const API_URL = 'http://3adabd21.ngrok.io/mews';
+const API_URL = window.location.hostname === 'localhost' ? "http://localhost:5000/mews" : "https://pines-chat-api.now.sh/mews";
+
+loadmews();
 
 setInterval(() => {
   loadmews();
-}, 1000*5);
+}, 1000 * 5);
 loading.style.display = "none";
 
 form.addEventListener('submit', (event) => {
@@ -36,31 +38,32 @@ form.addEventListener('submit', (event) => {
     });
 })
 
-function loadmews(){
+function loadmews() {
   fetch(API_URL).then(response => response.json())
-  .then(list => {
-    mews.innerHTML = '';
-    list.reverse();
-    list.forEach(element => {
-      let container = document.createElement('div'); 
-      
-      let heading = document.createElement('h3');
-      let content = document.createElement('p');
-      let date = document.createElement('small');
+    .then(list => {
+      mews.innerHTML = '';
+      list.reverse();
+      list.forEach(element => {
+        let container = document.createElement('div');
 
-      date.className = "date";
-      heading.className = "heading";
-      content.className = "content";
+        let heading = document.createElement('h3');
+        let content = document.createElement('p');
+        let date = document.createElement('small');
 
-      date.textContent = element.created;
-      heading.textContent = element.name;
-      content.textContent = element.content;
+        container.className = "container";
+        date.className = "date";
+        heading.className = "heading";
+        content.className = "content";
 
-      container.appendChild(heading);
-      container.appendChild(date);
-      container.appendChild(content);
+        date.textContent = element.created;
+        heading.textContent = element.name;
+        content.textContent = element.content;
 
-      mews.appendChild(container);
-    });
+        container.appendChild(heading);
+        container.appendChild(date);
+        container.appendChild(content);
+
+        mews.appendChild(container);
+      });
     });
 }
