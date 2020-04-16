@@ -5,9 +5,10 @@ const monk = require('monk');
 const app = express();
 
 app.use(express.static('../client-bak'));
-const URI = "mongodb+srv://xatriya:qwertyakash@meower-db-sb8gj.mongodb.net/test?retryWrites=true&w=majority";
-// const db = monk('localhost/meower');
-const db = monk(URI || 'localhost/meower');
+
+//add remote mongodb uri here or use local db
+
+const db = monk(process.env.MONGO_URI || 'localhost/meower');
 
 const mews = db.get('mews');
 
