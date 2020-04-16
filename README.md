@@ -1,3 +1,6 @@
+![pines logo](/client-bak/pine.png)
+**pines**
+
 # simple chat app using node , express and mongodb. 
 
 This is a simple chat app , made using node ,  mongodb and express .
